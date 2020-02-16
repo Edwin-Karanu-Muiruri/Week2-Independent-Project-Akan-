@@ -22,7 +22,7 @@ function getAkanName(){
         document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
         document.getElementById("akanName").innerHTML = ("Your Akan Name is " + maleAkanNames[dayOfTheWeek] );
         return;
-    }else (gender==="female")
+    }else if (gender==="female")
         document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
         document.getElementById("akanName").innerHTML = ("Your Akan Name is " + femaleAkanNames[dayOfTheWeek] );
         return;
