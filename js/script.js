@@ -1,22 +1,29 @@
 function getAkanName(){
-    let yob = document.getElementById("yob").value
-    let mob = document.getElementById("mob").value
-    let dob = document.getElementById("dob").value
-    if (mob<1 || mob>12 || dob<1 || dob>31){
-        alert("The value you have entered is invalid")
-    };
-    let CC = parseInt(document.getElementById("yob").value.slice(0,1));
-    let YY = parseInt(document.getElementById("yob").value.slice(2,3));
+    let YOB = document.getElementById("yob").value;
+    let CC = parseInt(YOB.slice(0,2));
+    let YY = parseInt(YOB.slice(2,4));
     let MM = parseInt(document.getElementById("mob").value);
     let DD = parseInt(document.getElementById("dob").value);
-    let weekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    let maleAkanNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"]
-    let femaleAkanNames = ["Akosua","Adowa","Abenaa","Akua","Yaa","Afua","Ama"]
-    
-    let dayOfTheWeek = (((CC/4)-2*CC-1)+((5*YY/4))+((26*(MM+1)/10))+DD)%7;
+    let gender = document.getElementById("gender").value;
+    //get gender details below
+    if (MM<1 || MM>12 || DD<1 || DD>31){
+        alert("The value you have entered is invalid")
+        return;
+    }
+    if(MM==="" || DD==="" || YOB===""){
+        alert("Please fill in all the fields to get your Name");
+        return;
+    }
+    let weekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let maleAkanNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    let femaleAkanNames = ["Akosua","Adowa","Abenaa","Akua","Yaa","Afua","Ama"];
+    let dayOfTheWeek = parseInt((( ( (CC/4)-2*CC-1)+((5*YY/4))+((26*(MM+1)/10))+DD)%7));
     if (gender==="male"){
-        alert(maleAkanNames[dayOfTheWeek]);
+        document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
+        document.getElementById().innerHTML = ("Your Akan Name is " + "maleAkanNames[dayOfTheWeek]+" );
     }else if(gender==="female"){
-        alert(femaleAkanNames[dayOfTheWeek]);
+        document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
+        document.getElementById().innerHTML = ("Your Akan Name is " + "femaleAkanNames[dayOfTheWeek]" );
     };
-    };
+    document.getElementById("form").requestFullscreen();
+};
