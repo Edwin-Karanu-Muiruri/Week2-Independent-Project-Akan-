@@ -9,7 +9,7 @@ function getAkanName(){
     if (MM<1 || MM>12 || DD<1 || DD>31){
         alert("The value you have entered is invalid")
         return;
-    }
+    }//checks validity of the values inputed. Invalid values prompt an alert
     if(MM==="" || DD==="" || YOB===""){
         alert("Please fill in all the fields to get your Name");
         return;
@@ -20,10 +20,11 @@ function getAkanName(){
     let dayOfTheWeek = parseInt((( ( (CC/4)-2*CC-1)+((5*YY/4))+((26*(MM+1)/10))+DD)%7));
     if (gender==="male"){
         document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
-        document.getElementById().innerHTML = ("Your Akan Name is " + "maleAkanNames[dayOfTheWeek]+" );
-    }else if(gender==="female"){
+        document.getElementById("akanName").innerHTML = ("Your Akan Name is " + maleAkanNames[dayOfTheWeek] );
+        return;
+    }else (gender==="female")
         document.getElementById("result").innerHTML=("You day of birth is "+weekDay[dayOfTheWeek]);
-        document.getElementById().innerHTML = ("Your Akan Name is " + "femaleAkanNames[dayOfTheWeek]" );
+        document.getElementById("akanName").innerHTML = ("Your Akan Name is " + femaleAkanNames[dayOfTheWeek] );
+        return;
     };
-    document.getElementById("form").requestFullscreen();
-};
+
